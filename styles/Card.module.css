@@ -1,0 +1,106 @@
+.card {
+	overflow: hidden;
+	margin: 1rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  width: 300px;
+  height: 400px;
+	position: relative;
+	transition: transform 0.5s ease, background 0.5s ease;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom -20px right -40px;
+}
+
+.card::before {
+	background-image: linear-gradient(
+		130deg,
+		rgba(0, 0, 0, 0.587) 0% 45%,
+		transparent 46%,
+		rgba(255, 255, 255, 0.4) 46%,
+		rgba(255, 255, 255, 0.4) 56%,
+		transparent 56%,
+		transparent 61%,
+		rgba(255, 255, 255, 0.4) 61%,
+		rgba(255, 255, 255, 0.4) 62%,
+		transparent 62%,
+		var(--grad1),
+		var(--grad2)
+	);
+	content: "";
+	border: 1px solid #a5a5a5;
+	background-size: 300% 300%;
+	background-position: 0% 0%;
+	position: absolute;
+	transition: 
+		background 0.5s ease-in-out,
+		box-shadow 0.6s ease;
+	transform: scale(1.0);
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+.card:hover {
+	transform: scale(1.1);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom 20px right -20px;
+}
+
+.card:hover::before {
+	background-position: 100% 100%;
+}
+
+.card-content {
+	@apply flex flex-col justify-between;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: radial-gradient(
+		rgba(255, 255, 255, 0.2) 8%, 
+		transparent 8%);
+	background-position: 0% 0%;
+	background-size: 3vmin 3vmin;
+	padding: 3vmin;
+	transition: background 0.6s ease, color 0.6s ease;
+}
+
+.card > .card-content:hover {
+	background-size: 3vmin 3vmin;
+	background-position: -15% 0%;
+	color: inherit;
+}
+
+.card > .card-content:hover {
+	background: radial-gradient(
+		transparent 8%
+		rgba(255, 255, 255, 0.2) 8% 
+		);
+	background-size: 3vmin 3vmin;
+	background-position: -15% 0%;
+	color: inherit;
+}
+
+.project-image {
+	position: absolute;
+	right: -40px;
+	bottom: -20px;
+	opacity: 0.5;
+	transition: opacity 0.5s ease, right 0.5s ease, bottom 0.5s ease;
+}
+
+.card-content:hover > .project-image {
+	opacity: 1;
+	right: 0px;
+	bottom: 0px;
+} 
+
+.github {
+	@apply overflow-hidden inline absolute right-0 bottom-10 
+				 p-2 h-10 w-10 hover:w-44 bg-white whitespace-nowrap
+			 text-black font-bold transition-all duration-200 ease-in-out;
+}
