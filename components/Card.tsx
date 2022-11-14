@@ -1,7 +1,6 @@
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { CSSProperties } from 'react';
-import Image from 'next/image';
 import styles from '../styles/Card.module.css';
 import Tag from './Tag';
 
@@ -15,10 +14,6 @@ type CardProps = {
 export default function Card({ title, projectName, tags, children }: CardProps) {
 	let link = `https://www.github.com/weidelix/${projectName}`;
 	let image = `/images/${projectName}.png`;
-
-	const imageStyle : CSSProperties = {
-		backgroundImage: `url(${image})`,
-	};
 
 	return (
 		<div className={styles.card}>
@@ -37,7 +32,7 @@ export default function Card({ title, projectName, tags, children }: CardProps) 
 
 				<a href={link} target='_blank' rel='noreferrer' className={styles.github}>
 						<FontAwesomeIcon className='inline h-full' icon={faGithub}/>
-						<span className='px-2'>Open in Github</span>
+						<span className='px-3'>Open in Github</span>
 				</a>
 			</div>
 		</div>

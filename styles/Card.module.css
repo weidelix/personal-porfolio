@@ -100,7 +100,7 @@
 } 
 
 .github {
-	@apply overflow-hidden inline absolute right-0 bottom-10 
+	@apply overflow-hidden inline absolute right-0 bottom-5
 				 p-2 h-10 w-10 hover:w-44 bg-white whitespace-nowrap
 			 text-black font-bold transition-all duration-200 ease-in-out;
 }
