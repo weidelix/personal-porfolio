@@ -49,8 +49,7 @@ export default function Home() {
 							style={{animationDelay: `${slideDownDelay}ms`}}>
 						
 						{title.map((word, i) => {
-							if (word === ' ')
-								return <>&nbsp;</>;
+							if (word === ' ') return <>&nbsp;</>;
 													
 							let dir = (i / 2) % 2  === 0 ? 'X' : 'Y';
 							let offset = [-40, 40][Math.round(Math.random())];
@@ -64,10 +63,13 @@ export default function Home() {
 						})}
 					</h1>
 					<p className={styles.description}>
-							{desc.map((d, i) => <span key={d} className={styles['stagger-child']} 
-																				style={{animationDelay: `${(interval * i) + descDelay}ms`}}>
-																		{(d === ' ' ? <>&nbsp;</> : d)}
-																	</span>
+							{desc.map((d, i) => {
+									if (d === ' ') return <>&nbsp;</>;
+									return <span key={d} className={styles['stagger-child']} 
+															 style={{animationDelay: `${(interval * i) + descDelay}ms`}}>
+														{d}
+												 </span>
+								}
 							)}
 					</p>
 
@@ -79,9 +81,11 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className='grid grid-cols-2 place-items-center h-screen px-40 snap-start'>
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 place-content-center h-screen
+											  px-10 md:px-40 snap-start'>
 					<AnimationOnScroll animateIn='animate__fadeInDown animate__faster' animateOnce={true}>
-						<h1 className={`${styles['gradient-text']} text-xl md:text-4xl lg:text-7xl font-bold p-10 text-right`}>
+						<h1 className={`${styles['gradient-text']} text-4xl md:text-4xl lg:text-7xl font-bold
+														text-left md:text-right`}>
 							Who am I? Let me tell you!
 						</h1>
 					</AnimationOnScroll>
@@ -94,7 +98,7 @@ export default function Home() {
 				</div>
 
 				<div className='flex flex-col justify-center lg:h-screen snap-start md:lg:snap-center'>
-					<h1 className='text-xl md:text-4xl lg:text-4xl font-bold p-10'>Projects made with ❤️</h1>
+					<h1 className='text-xl md:text-4xl lg:text-4xl font-bold p-10'>Projects I made with ❤️</h1>
 					<div className={styles.grid}>
 						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={100} animateOnce={true}>
 							<Card title='Tommy' projectName='tommy' tags={['flutter', 'dart']}>
