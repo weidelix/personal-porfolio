@@ -3,6 +3,8 @@ import 'animate.css/animate.min.css';
 import React, { useEffect } from 'react';
 import Card from '../components/Card';
 import styles from '../styles/Home.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const colors = [
 	['#ffa751', '#ffe259'],
@@ -27,8 +29,8 @@ export default function Home() {
 		document.documentElement.style.setProperty('--grad2', randomColor[1]);
 	}, []);
 	
-	let desc = 'Student. Mentor. Developer.'.split(/(\s+)/);
-	let title = 'Hi, I\'m Anthony'.split(/(\s+)/);
+	let desc = 'Student. Hobbyist. Developer.'.split(/(\s+)/);
+	let title = "Hi, I'm Anthony".split(/(\s+)/);
 	let interval = 150;
 	let baseDelay = 700;
 	let descDelay = (interval * title.length) + baseDelay;
@@ -124,6 +126,15 @@ export default function Home() {
 							</Card>
 						</AnimationOnScroll>
 					</div>
+				</div>
+
+				<div className='flex space-x-8 absolute right-0 top-0 px-10 py-8'>
+					<a href={'https://www.linkedin.com/in/anthony-mesina-b41a82245/'} target='_blank' rel='noreferrer'>
+							<FontAwesomeIcon className='inline h-6' icon={faLinkedin}/>
+					</a>
+					<a href={'https://www.github.com/weidelix'} target='_blank' rel='noreferrer'>
+							<FontAwesomeIcon className='inline h-6' icon={faGithub}/>
+					</a>
 				</div>
       </main>
     </div>
