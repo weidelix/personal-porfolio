@@ -85,13 +85,13 @@ export default function Home() {
 
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 place-content-center h-screen
 											  px-10 md:px-40 snap-start'>
-					<AnimationOnScroll animateIn='animate__fadeInDown animate__faster' animateOnce={true} delay={100}>
+					<AnimationOnScroll animateIn='animate__fadeInDown animate__faster' animateOnce={true} delay={300}>
 						<h1 className={`${styles['gradient-text']} text-4xl md:text-4xl lg:text-7xl font-bold
 														text-left md:text-right`}>
 							Who am I? Let me tell you!
 						</h1>
 					</AnimationOnScroll>
-					<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' animateOnce={true} delay={100}>
+					<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' animateOnce={true} delay={300}>
 						<p className='text-left text-base md:text-3xl'>
 							Hi, I&apos;m Anthony. I&apos;m a student and a developer. 
 							I love to make things and I&apos;m always looking for new projects to work on.
