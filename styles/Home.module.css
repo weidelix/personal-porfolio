@@ -40,9 +40,9 @@
 }
 
 .name-after-slide {
-	@apply flex justify-center
+	@apply flex flex-wrap justify-center
 				 space-x-6 md:space-x-6 lg:space-x-14 
-				 text-4xl md:text-8xl lg:text-9xl 
+				 text-5xl md:text-8xl lg:text-9xl 
 				 font-bold;
 	animation-name: show-name;
 	animation-duration: 0.15s;
@@ -54,9 +54,9 @@
 }
 
 .name-before-slide {
-	@apply flex justify-center
+	@apply flex flex-wrap justify-center
 				 space-x-6 md:space-x-6 lg:space-x-14 
-				 text-4xl md:text-8xl lg:text-9xl 
+				 text-5xl md:text-8xl lg:text-9xl 
 				 font-bold;
 	transform: translateY(-15px);
 	animation-name: hide-name;

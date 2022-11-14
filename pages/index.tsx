@@ -1,9 +1,8 @@
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import 'animate.css/animate.min.css';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Card from '../components/Card';
 import styles from '../styles/Home.module.css';
-
 
 const colors = [
 	['#ffa751', '#ffe259'],
@@ -28,7 +27,7 @@ export default function Home() {
 		document.documentElement.style.setProperty('--grad2', randomColor[1]);
 	}, []);
 	
-	let desc = 'Student. Developer. Hatdog.'.split(' ');
+	let desc = 'Student. Developer. Designer.'.split(' ');
 	let title = 'Hi, I\'m Anthony'.split(' ');
 	let interval = 150;
 	let baseDelay = 700;
@@ -66,6 +65,13 @@ export default function Home() {
 																				style={{animationDelay: `${(interval * i) + descDelay}ms`}}>{d}</span>
 							)}
 					</p>
+
+					<div className='absolute left-0 right-0 bottom-14 flex flex-col justify-center mt-36 
+												text-gray-200 text-sm animate__animated animate__fadeInUp'
+							 style={{animationDelay: `${zoomInDelay}ms`}}>
+							<span>Scroll for more</span>
+							<i className="gg-chevron-down self-center"></i>
+					</div>
 				</div>
 
 				<div className='flex flex-col justify-center lg:h-screen snap-start md:lg:snap-center'>
@@ -85,7 +91,7 @@ export default function Home() {
 							
 						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={300} animateOnce={true}>
 							<Card title='Anima' projectName='anima' tags={['typescript', 'javascript', 'svelte', 'nodejs']}>
-								Something something soemthing nice.
+								Manage and be updated on the latest games. 
 							</Card>
 						</AnimationOnScroll>
 							
