@@ -68,28 +68,28 @@ export default function Home() {
 					</p>
 				</div>
 
-				<div className='flex flex-col justify-center h-screen snap-center'>
-					<h1 className='text-4xl font-bold p-10'>Projects made with ❤️</h1>
+				<div className='flex flex-col justify-center lg:h-screen snap-start md:lg:snap-center'>
+					<h1 className='text-xl md:text-4xl lg:text-4xl font-bold p-10'>Projects made with ❤️</h1>
 					<div className={styles.grid}>
-						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={100}>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={100} animateOnce={true}>
 							<Card title='Tommy' projectName='tommy' tags={['flutter', 'dart']}>
 								A free manga reader for Windows.
 							</Card>
 						</AnimationOnScroll>
 
-						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={200}>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={200} animateOnce={true}>
 							<Card title='Iron' projectName='iron' tags={['cplusplus']}>
 								A light weight game engine made using OpenGL. 
 							</Card>
 						</AnimationOnScroll>
 							
-						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={300}>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={300} animateOnce={true}>
 							<Card title='Anima' projectName='anima' tags={['typescript', 'javascript', 'svelte', 'nodejs']}>
 								Something something soemthing nice.
 							</Card>
 						</AnimationOnScroll>
 							
-						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={400}>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={400} animateOnce={true}>
 							<Card title='Cleithropobia' projectName='cleithrophobia' tags={['csharp', 'unity']}>
 								Navigate your way through a dark maze and find the exit.
 							</Card>
