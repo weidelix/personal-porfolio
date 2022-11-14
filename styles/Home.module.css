@@ -1,12 +1,12 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0rem;
 	background-color: black;
 	color: white;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 0rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 0rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
 .name-after-slide {
 	@apply flex justify-center
 				 space-x-6 md:space-x-6 lg:space-x-14 
-				 text-7xl md:text-8xl lg:text-9xl 
+				 text-4xl md:text-8xl lg:text-9xl 
 				 font-bold;
 	animation-name: show-name;
 	animation-duration: 0.15s;
@@ -56,7 +56,7 @@
 .name-before-slide {
 	@apply flex justify-center
 				 space-x-6 md:space-x-6 lg:space-x-14 
-				 text-7xl md:text-8xl lg:text-9xl 
+				 text-4xl md:text-8xl lg:text-9xl 
 				 font-bold;
 	transform: translateY(-15px);
 	animation-name: hide-name;
@@ -76,12 +76,11 @@
 .description {
 	@apply flex justify-center py-4
 				 space-x-3 md:space-x-2 lg:space-x-4
-				 text-xl md:text-2xl lg:text-3xl;
+				 text-base md:text-2xl lg:text-3xl;
 }
 
 .greet {
-	@apply flex flex-col content-center justify-center;
-	height: 600px;
+	@apply snap-center flex flex-col content-center justify-center h-screen;
 	position: relative;
 	transform: scale(0.95);
 	animation-name: zoom-in;

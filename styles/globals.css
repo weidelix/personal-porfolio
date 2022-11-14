@@ -16,7 +16,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Consolas', Consolas, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Consolas', Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+	@apply overflow-y-scroll snap-mandatory snap-y;
 }
 
 a {

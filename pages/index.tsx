@@ -1,8 +1,6 @@
-import { faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
-import { randomInt } from 'crypto';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import 'animate.css/animate.min.css';
+import React, { useEffect, useRef } from 'react';
 import Card from '../components/Card';
 import styles from '../styles/Home.module.css';
 
@@ -41,7 +39,7 @@ export default function Home() {
 	return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <div className={styles.greet} style={{animationDelay: `${zoomInDelay}ms`}}>
+				<div className={styles.greet} style={{animationDelay: `${zoomInDelay}ms`}}>
 					{/* Show after slide */}
 					<h1 className={styles['name-after-slide']} style={{animationDelay: `${slideDownDelay}ms`}}>
 						{title.map((word, i) => <span key={i}>{word}</span>)}
@@ -55,12 +53,12 @@ export default function Home() {
 							let dir = i % 2 === 0 ? 'X' : 'Y';
 							let offset = [-40, 40][Math.round(Math.random())];
 							let out = `translate${dir}(${offset}px)`;
- 
+
 							return <span key={i} className={`${styles['stagger-child']} text-white`}
-													 style={{transform: out, 
-																	 animationDelay: `${(interval * i) + baseDelay}ms`}}>
-											 {char}
-										 </span>;
+													style={{transform: out, 
+																	animationDelay: `${(interval * i) + baseDelay}ms`}}>
+											{char}
+										</span>;
 						})}
 					</h1>
 					<p className={styles.description}>
@@ -70,25 +68,34 @@ export default function Home() {
 					</p>
 				</div>
 
-				<h1 className='text-4xl font-bold p-10'>Projects made with ❤️</h1>
+				<div className='flex flex-col justify-center h-screen snap-center'>
+					<h1 className='text-4xl font-bold p-10'>Projects made with ❤️</h1>
+					<div className={styles.grid}>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={100}>
+							<Card title='Tommy' projectName='tommy' tags={['flutter', 'dart']}>
+								A free manga reader for Windows.
+							</Card>
+						</AnimationOnScroll>
 
-        <div className={styles.grid}>
-					<Card title='Tommy' projectName='tommy' tags={['flutter', 'dart']}>
-						A free manga reader for Windows.
-					</Card>
-
-					<Card title='Iron' projectName='iron' tags={['cplusplus']}>
-						A light weight game engine made using OpenGL. 
-					</Card>
-					
-					<Card title='Anima' projectName='anima' tags={['typescript', 'javascript', 'svelte', 'nodejs']}>
-						Something something soemthing nice.
-					</Card>
-					
-					<Card title='Cleithropobia' projectName='cleithrophobia' tags={['csharp', 'unity']}>
-						Navigate your way through a dark maze and find the exit.
-					</Card>
-        </div>
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={200}>
+							<Card title='Iron' projectName='iron' tags={['cplusplus']}>
+								A light weight game engine made using OpenGL. 
+							</Card>
+						</AnimationOnScroll>
+							
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={300}>
+							<Card title='Anima' projectName='anima' tags={['typescript', 'javascript', 'svelte', 'nodejs']}>
+								Something something soemthing nice.
+							</Card>
+						</AnimationOnScroll>
+							
+						<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' delay={400}>
+							<Card title='Cleithropobia' projectName='cleithrophobia' tags={['csharp', 'unity']}>
+								Navigate your way through a dark maze and find the exit.
+							</Card>
+						</AnimationOnScroll>
+					</div>
+				</div>
       </main>
     </div>
   );
