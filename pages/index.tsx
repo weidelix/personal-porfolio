@@ -51,7 +51,7 @@ export default function Home() {
 						{title.map((word, i) => {
 							if (word === ' ')
 								return <>&nbsp;</>;
-							// 0 1 2 3 4
+													
 							let dir = (i / 2) % 2  === 0 ? 'X' : 'Y';
 							let offset = [-40, 40][Math.round(Math.random())];
 							let out = `translate${dir}(${offset}px)`;
