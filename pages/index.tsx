@@ -27,8 +27,8 @@ export default function Home() {
 		document.documentElement.style.setProperty('--grad2', randomColor[1]);
 	}, []);
 	
-	let desc = 'Student. Developer. Designer.'.split(' ');
-	let title = 'Hi, I\'m Anthony'.split(' ');
+	let desc = 'Student. Mentor. Developer.'.split(/(\s+)/);
+	let title = 'Hi, I\'m Anthony'.split(/(\s+)/);
 	let interval = 150;
 	let baseDelay = 700;
 	let descDelay = (interval * title.length) + baseDelay;
@@ -41,28 +41,33 @@ export default function Home() {
 				<div className={styles.greet} style={{animationDelay: `${zoomInDelay}ms`}}>
 					{/* Show after slide */}
 					<h1 className={styles['name-after-slide']} style={{animationDelay: `${slideDownDelay}ms`}}>
-						{title.map((word, i) => <span key={i}>{word}</span>)}
+						{title.map((word, i) => <span key={i}>{(word === ' ' ? <>&nbsp;</> : word)}</span>)}
 					</h1>
 
 					{/* Show before slide */}
 					<h1 className={styles['name-before-slide']}
 							style={{animationDelay: `${slideDownDelay}ms`}}>
 						
-						{title.map((char, i) => {
-							let dir = i % 2 === 0 ? 'X' : 'Y';
+						{title.map((word, i) => {
+							if (word === ' ')
+								return <>&nbsp;</>;
+							// 0 1 2 3 4
+							let dir = (i / 2) % 2  === 0 ? 'X' : 'Y';
 							let offset = [-40, 40][Math.round(Math.random())];
 							let out = `translate${dir}(${offset}px)`;
 
 							return <span key={i} className={`${styles['stagger-child']} text-white`}
 													style={{transform: out, 
 																	animationDelay: `${(interval * i) + baseDelay}ms`}}>
-											{char}
+											{word}
 										</span>;
 						})}
 					</h1>
 					<p className={styles.description}>
 							{desc.map((d, i) => <span key={d} className={styles['stagger-child']} 
-																				style={{animationDelay: `${(interval * i) + descDelay}ms`}}>{d}</span>
+																				style={{animationDelay: `${(interval * i) + descDelay}ms`}}>
+																		{(d === ' ' ? <>&nbsp;</> : d)}
+																	</span>
 							)}
 					</p>
 
@@ -72,6 +77,20 @@ export default function Home() {
 							<span>Scroll for more</span>
 							<i className="gg-chevron-down self-center"></i>
 					</div>
+				</div>
+
+				<div className='grid grid-cols-2 place-items-center h-screen px-40 snap-start'>
+					<AnimationOnScroll animateIn='animate__fadeInDown animate__faster' animateOnce={true}>
+						<h1 className={`${styles['gradient-text']} text-xl md:text-4xl lg:text-7xl font-bold p-10 text-right`}>
+							Who am I? Let me tell you!
+						</h1>
+					</AnimationOnScroll>
+					<AnimationOnScroll animateIn='animate__fadeInUp animate__faster' animateOnce={true}>
+						<p className='text-left text-base md:text-3xl'>
+							Hi, I&apos;m Anthony. I&apos;m a student and a developer. 
+							I love to make things and I&apos;m always looking for new projects to work on.
+						</p>
+					</AnimationOnScroll>
 				</div>
 
 				<div className='flex flex-col justify-center lg:h-screen snap-start md:lg:snap-center'>
