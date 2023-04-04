@@ -65,3 +65,16 @@ a {
 	left: 4px;
 	top: 2px
 }
+.gradient-text {
+	background-image: linear-gradient(130deg, var(--grad1), var(--grad2));
+	background-clip: text;
+	background-repeat: no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+
+.gradient-background {
+	background-image: linear-gradient(130deg, var(--grad1), var(--grad2));
+}

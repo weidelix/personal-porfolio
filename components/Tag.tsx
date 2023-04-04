@@ -1,25 +1,25 @@
-const tagColor : { [key: string]: string } = {
-	'cplusplus': 'text-blue-500',
-	'dart': 'text-blue-500',
-	'flutter': 'text-blue-400',
-	'csharp': 'text-violet-500',
-	'unity': 'text-white',
-	'svelte': 'text-orange-500',
-	'nodejs': 'text-green-500',
-	'javascript': 'text-yellow-500',
-	'typescript': 'text-blue-400',
+export const tagColor: { [key: string]: string } = {
+	'C++': 'text-blue-500',
+	'Dart': 'text-blue-500',
+	'Flutter': 'text-blue-400',
+	'C#': 'text-violet-500',
+	'Unity': 'text-white',
+	'Svelte': 'text-orange-500',
+	'NodeJS': 'text-green-500',
+	'Javascript': 'text-yellow-500',
+	'Typescript': 'text-blue-400',
 };
 
-const tagName : { [key: string]: string } = {
-	'cplusplus': 'devicon-cplusplus-plain',
-	'dart': 'devicon-dart-plain',
-	'flutter': 'devicon-flutter-plain',
-	'csharp': 'devicon-csharp-plain',
-	'unity': 'devicon-unity-original',
-	'svelte': 'devicon-svelte-plain',
-	'nodejs': 'devicon-nodejs-plain',
-	'javascript': 'devicon-javascript-plain',
-	'typescript': 'devicon-typescript-plain',
+export const tagName: { [key: string]: string } = {
+	'C++': 'devicon-cplusplus-plain',
+	'Dart': 'devicon-dart-plain',
+	'Flutter': 'devicon-flutter-plain',
+	'C#': 'devicon-csharp-plain',
+	'Unity': 'devicon-unity-original',
+	'Svelte': 'devicon-svelte-plain',
+	'NodeJS': 'devicon-nodejs-plain',
+	'Javascript': 'devicon-javascript-plain',
+	'Typescript': 'devicon-typescript-plain',
 };
 
 type TagProps = {

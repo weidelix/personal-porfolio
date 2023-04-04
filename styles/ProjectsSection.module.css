@@ -1,0 +1,11 @@
+.grid {
+	@apply flex flex-row gap-4 justify-center w-4/5 mb-36 overflow-visible;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}

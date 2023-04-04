@@ -1,0 +1,4 @@
+.bar {
+	@apply px-2 h-3 text-xs font-bold rounded-full;
+	background-image: linear-gradient(130deg, var(--grad1), var(--grad2));
+}

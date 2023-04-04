@@ -19,20 +19,20 @@ export default function Card({ title, projectName, tags, children }: CardProps) 
 		<div className={styles.card}>
 			<div className={styles['card-content']}>
 				<div>
-						<h1 className='text-3xl font-bold mb-2'>{title}</h1>
+					<h1 className='text-2xl font-bold mb-2'>{title}</h1>
 					<span>
-						{tags.map((tag, i) => <Tag key={i} tag={tag}/>)}
+						{tags.map((tag, i) => <Tag key={i} tag={tag} />)}
 					</span>
-					<p className='text-base font-normal py-4'>
+					<p className='text-sm font-normal py-4'>
 						{children}
 					</p>
 				</div>
 
-				<Image className={styles['project-image']} width={1920} height={1080} src={image} alt={`${title} image`}/>
+				<Image className={styles['project-image']} width={1920} height={1080} src={image} alt={`${title} image`} />
 
 				<a href={link} target='_blank' rel='noreferrer' className={styles.github}>
-						<FontAwesomeIcon className='inline h-full' icon={faGithub}/>
-						<span className='px-3'>Open in Github</span>
+					<FontAwesomeIcon className='inline h-full' icon={faGithub} />
+					<span className='px-3'>Open in Github</span>
 				</a>
 			</div>
 		</div>
